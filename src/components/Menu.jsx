@@ -1,4 +1,4 @@
-export default function Menu({ activeView, setActiveView }) {
+const Menu = ({ activeView, setActiveView }) => {
     const buttonStyle = (view) =>
         `text-left px-4 py-3 rounded-lg transition ${
             activeView === view
@@ -51,4 +51,6 @@ export default function Menu({ activeView, setActiveView }) {
             </nav>
         </aside>
     );
-}
+};
+
+export default Menu;
