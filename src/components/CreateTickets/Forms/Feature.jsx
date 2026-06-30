@@ -1,4 +1,7 @@
 const Feature = () => {
+    const currentYear = new Date().getFullYear();
+
+    const quarters = ["Q1", "Q2", "Q3", "Q4"];
     return (
         <form
             id="formFeature"
@@ -151,15 +154,23 @@ const Feature = () => {
                                 className="text-sm font-semibold mb-2 text-blue-100"
                                 htmlFor="quarter"
                             >
-                                Q Estimado:
+                                Q estimado:
                             </label>
-                            <input
-                                type="text"
+
+                            <select
                                 id="quarter"
-                                className="w-full bg-[#111827] border border-blue-500/60 rounded-lg px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-all shadow-[inset_0_2px_4px_rgba(0,0,0,0.3)"
-                                placeholder="Q estimado despliegue"
+                                className="w-full bg-[#111827] border border-blue-500/60 rounded-lg px-4 py-2.5 text-sm text-white"
                                 required
-                            />
+                            >
+                                {quarters.map((quarter) => (
+                                    <option
+                                        key={quarter}
+                                        value={`#${currentYear}-${quarter}`}
+                                    >
+                                        {quarter}
+                                    </option>
+                                ))}
+                            </select>
                         </div>
                     </section>
                 </div>
@@ -173,16 +184,23 @@ const Feature = () => {
                         >
                             Acceptance Criteria:
                         </label>
-                        <textarea
-                            id="acceptanceCriteria"
-                            rows="2"
-                            cols="35"
-                            className="w-full bg-[#111827] border border-blue-500/60 rounded-lg px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-all resize-none shadow-[inset_0_2px_4px_rgba(0,0,0,0.3)]"
-                            placeholder="Criterios de aceptación para empezar desarrollo"
-                            required
-                            minLength="10"
-                        ></textarea>
+
+                        <div className="flex items-start w-full bg-[#111827] border border-blue-500/60 rounded-lg px-4 py-2.5 text-sm text-white focus-within:border-blue-400 focus-within:ring-1 focus-within:ring-blue-400">
+                            <span className="text-gray-300 whitespace-nowrap">
+                                Yo como desarrollador del OPS&nbsp;
+                            </span>
+
+                            <textarea
+                                id="acceptanceCriteria"
+                                rows="2"
+                                className="flex-1 bg-transparent outline-none resize-none"
+                                placeholder=" necesito..."
+                                required
+                                minLength="10"
+                            />
+                        </div>
                     </div>
+
                     <div className="flex flex-col">
                         <label
                             className="text-sm font-semibold mb-2 text-blue-100"
