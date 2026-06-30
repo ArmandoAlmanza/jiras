@@ -1,5 +1,7 @@
-import Card from "./components/Card";
+import ListAllTickets from "./components/ListTickets/ListAllTickets";
+import CreateTickets from "./components/CreateTickets/CreateTickets";
 import Menu from "./components/Menu";
+import { useState } from "react";
 
 const App = () => {
     const jiraTickets = [
@@ -125,25 +127,35 @@ const App = () => {
             status: "Deployed",
         },
     ];
+    const [activeView, setActiveView] = useState("dashboard");
+
+    const renderContent = () => {
+        switch (activeView) {
+            case "dashboard":
+                return <ListAllTickets jiras={jiraTickets} />;
+
+            case "tickets":
+                return <CreateTickets />;
+
+            case "releases":
+                return <ListAllTickets jiras={jiraTickets} />;
+
+            case "reports":
+                return <ListAllTickets jiras={jiraTickets} />;
+
+            case "team":
+                return <ListAllTickets jiras={jiraTickets} />;
+
+            default:
+                return <ListAllTickets jiras={jiraTickets} />;
+        }
+    };
+
     return (
         <div className="flex">
-            <Menu />
+            <Menu activeView={activeView} setActiveView={setActiveView} />
 
-            <div className="flex-1">
-                <div className="grid grid-cols-4 p-5 gap-5">
-                    {jiraTickets.map((jira, i) => (
-                        <Card
-                            key={i}
-                            title={jira.title}
-                            description={jira.description}
-                            asigneeName={jira.assignee.name}
-                            dueDate={jira.dueDate}
-                            asigneePhoto={jira.assignee.photo}
-                            status={jira.status}
-                        />
-                    ))}
-                </div>
-            </div>
+            <main className="flex-1">{renderContent()}</main>
         </div>
     );
 };
