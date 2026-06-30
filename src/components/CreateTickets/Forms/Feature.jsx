@@ -7,7 +7,7 @@ const Feature = () => {
             id="formFeature"
             className="w-full bg-[#1F2937] rounded-3xl border border-blue-500 shadow-[0_0_30px_-5px_rgba(0,19,145,0.35)] lg:p-8 p-4 text-[0.9rem]"
         >
-            <h3 className="text-2xl font-bold text-center mt-6 mb-8 tracking-wide text-blue-100">
+            <h3 className="text-2xl font-bold text-center mb-8 tracking-wide text-blue-100">
                 Crear Feature Jira
             </h3>
 
