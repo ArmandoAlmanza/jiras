@@ -1,56 +1,133 @@
+const DESCRIPTION_MAX_LENGTH = 180;
+
+const truncateText = (text = "", maxLength) => {
+    if (text.length <= maxLength) {
+        return text;
+    }
+
+    return `${text.slice(0, maxLength).trimEnd()}...`;
+};
+
 const Card = ({
+    id,
     title,
     description,
     asigneeName,
-    dueDate,
-    asigneePhoto,
-    status,
+    status
 }) => {
     const statusColors = {
         New: "bg-gray-400",
-        Analysing: "bg-gray-600",
-
-        Ready: "bg-amber-500",
-
-        "In Progress": "bg-blue-400",
-        Test: "bg-blue-600",
-        "Ready To Verify": "bg-blue-800",
-
-        Accepted: "bg-green-400",
+        Analysing: "bg-slate-500",
+        "In Progress": "bg-blue-500",
+        Test: "bg-cyan-600",
+        "Ready To Verify": "bg-indigo-600",
+        Accepted: "bg-emerald-400",
         "Ready to Deploy": "bg-green-600",
         Deployed: "bg-green-800",
-
-        "To Rework": "bg-orange-500",
-
-        Discarded: "bg-red-500",
+        Deleted: "bg-red-500",
     };
 
+    const idArranged = id?.split("-").pop() ?? id;
+
+    const shortenedDescription = truncateText(
+        description,
+        DESCRIPTION_MAX_LENGTH
+    );
+
     return (
-        <article className="border border-gray-200 p-5 rounded-2xl">
-            <header className="relative flex justify-between items-center pb-4 after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:w-[95%] after:h-[2.7px] after:bg-gray-200">
-                <h1 className="font-bold text-2xl">{title}</h1>
-                <span
-                    className={`h-3.5 w-3.5 rounded-full border border-white/40 shadow-sm ${statusColors[status]}`}
-                />
+        <article
+            className="
+          flex h-[350px] w-full flex-col overflow-hidden
+          rounded-2xl border border-gray-200
+          px-5 pt-5 pb-[10px]
+        "
+        >
+            <header
+                className="
+            relative flex min-h-[100px] shrink-0
+            items-start justify-between gap-4 pb-2
+            after:absolute after:bottom-0 after:left-1/2
+            after:h-[2.7px] after:w-[95%]
+            after:-translate-x-1/2 after:bg-gray-200
+          "
+            >
+                <h1
+                    title={title}
+                    className="
+              min-w-0 flex-1
+              line-clamp-3
+              text-xl font-bold leading-tight
+            "
+                >
+                    {title}
+                </h1>
+
+                <a
+                    href={`https://jira.globaldevtools.bbva.com/browse/${id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="shrink-0 pt-1 text-lg font-bold text-sky-400"
+                >
+                    {idArranged}
+                </a>
             </header>
-            <main className="w-full pt-2 relative flex justify-between items-center pb-4 after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-0 after:w-[95%] after:h-[2.7px] after:bg-gray-200 ">
-                <p className="text-lg">{description}</p>
-            </main>
-            <footer className="flex gap-5 justify-between items-center">
-                <div className="flex items-center content-center gap-2 p-2">
-                    <img
-                        src={asigneePhoto.toString()}
-                        alt="asignee photo"
-                        className="max-w-6.25 rounded-full"
-                    />
-                    <p className="font-bold text-blue-700">{asigneeName}</p>
-                </div>
-                <p>
-                    Due date: <span className="font-bold">{dueDate}</span>
+
+            <main
+                className="
+            relative min-h-0 flex-1 overflow-hidden
+            pt-3 pb-4
+            after:absolute after:bottom-0 after:left-1/2
+            after:h-[2.7px] after:w-[95%]
+            after:-translate-x-1/2 after:bg-gray-200
+          "
+            >
+                <p
+                    className="text-lg leading-7"
+                    title={description}
+                >
+                    {shortenedDescription}
                 </p>
+            </main>
+
+            <footer
+                className="
+    mt-2 flex shrink-0 flex-col gap-2
+  "
+            >
+                <div
+                    className="
+      flex min-w-0 items-center justify-between gap-3
+      px-2
+    "
+                >
+                    <p className="truncate font-bold text-sky-400">
+                        {asigneeName}
+                    </p>
+
+                    <span
+                        title={status}
+                        className={`
+        h-3.5 w-3.5 shrink-0 rounded-full
+        border border-white/40 shadow-sm
+        ${statusColors[status] ?? "bg-gray-400"}
+      `}
+                    />
+                </div>
+
+                <button
+                    type="button"
+                    className="
+    w-full cursor-pointer rounded-lg
+    bg-blue-600 px-4 py-2
+    text-center font-semibold text-white
+    transition-colors duration-200
+    hover:bg-blue-700
+  "
+                >
+                    Summary
+                </button>
             </footer>
         </article>
     );
 };
-
 export default Card;
