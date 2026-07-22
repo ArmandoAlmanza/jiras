@@ -1,5 +1,5 @@
 const Menu = ({ activeView, setActiveView }) => {
-   const itemClass = (view) =>
+   const buttonStyle = (view) =>
         `text-left px-4 py-3 rounded-lg transition ${
             activeView === view
                 ? "bg-blue-50 text-blue-600 font-semibold"

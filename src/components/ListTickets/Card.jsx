@@ -8,13 +8,7 @@ const truncateText = (text = "", maxLength) => {
     return `${text.slice(0, maxLength).trimEnd()}...`;
 };
 
-const Card = ({
-    id,
-    title,
-    description,
-    asigneeName,
-    status
-}) => {
+const Card = ({ id, title, description, asigneeName, status }) => {
     const statusColors = {
         New: "bg-gray-400",
         Analysing: "bg-slate-500",
@@ -31,33 +25,26 @@ const Card = ({
 
     const shortenedDescription = truncateText(
         description,
-        DESCRIPTION_MAX_LENGTH
+        DESCRIPTION_MAX_LENGTH,
     );
 
     return (
         <article
-            className="
-          flex h-[350px] w-full flex-col overflow-hidden
+            className="flex h-87.5 w-full flex-col overflow-hidden
           rounded-2xl border border-gray-200
-          px-5 pt-5 pb-[10px]
-        "
+          px-5 pt-5 pb-2.5"
         >
             <header
-                className="
-            relative flex min-h-[100px] shrink-0
+                className="relative flex min-h-25 shrink-0
             items-start justify-between gap-4 pb-2
             after:absolute after:bottom-0 after:left-1/2
             after:h-[2.7px] after:w-[95%]
-            after:-translate-x-1/2 after:bg-gray-200
-          "
+            after:-translate-x-1/2 after:bg-gray-200"
             >
                 <h1
                     title={title}
-                    className="
-              min-w-0 flex-1
-              line-clamp-3
-              text-xl font-bold leading-tight
-            "
+                    className="min-w-0 flex-1
+              line-clamp-3 text-xl font-bold leading-tight"
                 >
                     {title}
                 </h1>
@@ -73,32 +60,18 @@ const Card = ({
             </header>
 
             <main
-                className="
-            relative min-h-0 flex-1 overflow-hidden
-            pt-3 pb-4
-            after:absolute after:bottom-0 after:left-1/2
-            after:h-[2.7px] after:w-[95%]
-            after:-translate-x-1/2 after:bg-gray-200
-          "
+                className="relative min-h-0 flex-1 overflow-hidden pt-3 pb-4 after:absolute after:bottom-0 after:left-1/2 after:h-[2.7px] after:w-[95%] after:-translate-x-1/2 after:bg-gray-200"
             >
-                <p
-                    className="text-lg leading-7"
-                    title={description}
-                >
+                <p className="text-lg leading-7" title={description}>
                     {shortenedDescription}
                 </p>
             </main>
 
             <footer
-                className="
-    mt-2 flex shrink-0 flex-col gap-2
-  "
+                className="mt-2 flex shrink-0 flex-col gap-2"
             >
                 <div
-                    className="
-      flex min-w-0 items-center justify-between gap-3
-      px-2
-    "
+                    className="flex min-w-0 items-center justify-between gap-3 px-2"
                 >
                     <p className="truncate font-bold text-sky-400">
                         {asigneeName}
@@ -106,23 +79,13 @@ const Card = ({
 
                     <span
                         title={status}
-                        className={`
-        h-3.5 w-3.5 shrink-0 rounded-full
-        border border-white/40 shadow-sm
-        ${statusColors[status] ?? "bg-gray-400"}
-      `}
+                        className={`h-3.5 w-3.5 shrink-0 rounded-full border border-white/40 shadow-sm ${statusColors[status] ?? "bg-gray-400"}`}
                     />
                 </div>
 
                 <button
                     type="button"
-                    className="
-    w-full cursor-pointer rounded-lg
-    bg-blue-600 px-4 py-2
-    text-center font-semibold text-white
-    transition-colors duration-200
-    hover:bg-blue-700
-  "
+                    className="w-full cursor-pointer rounded-lg bg-blue-600 px-4 py-2 text-center font-semibold text-white transition-colors duration-200 hover:bg-blue-700 "
                 >
                     Summary
                 </button>
