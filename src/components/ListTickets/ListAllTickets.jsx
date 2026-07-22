@@ -7,12 +7,7 @@ const ListAllTickets = ({ jiras }) => {
                 {jiras.map((jira, i) => (
                     <Card
                         key={i}
-                        title={jira.title}
-                        description={jira.description}
-                        asigneeName={jira.assignee.name}
-                        dueDate={jira.dueDate}
-                        asigneePhoto={jira.assignee.photo}
-                        status={jira.status}
+                        jira={jira}
                     />
                 ))}
             </div>
