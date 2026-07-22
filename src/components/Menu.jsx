@@ -1,11 +1,10 @@
 const Menu = ({ activeView, setActiveView }) => {
-    const buttonStyle = (view) =>
+   const itemClass = (view) =>
         `text-left px-4 py-3 rounded-lg transition ${
             activeView === view
                 ? "bg-blue-50 text-blue-600 font-semibold"
                 : "hover:bg-gray-100 hover:text-blue-600"
         }`;
-
     return (
         <aside className="w-72 h-screen border-r border-gray-200 p-6 flex flex-col">
             <div>
@@ -51,6 +50,6 @@ const Menu = ({ activeView, setActiveView }) => {
             </nav>
         </aside>
     );
-};
+}
 
-export default Menu;
+export default Menu
