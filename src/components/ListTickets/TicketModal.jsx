@@ -102,37 +102,41 @@ const TicketModal = ({ isOpen, onClose, ticket }) => {
                             {ticket.description || "Sin descripción"}
                         </p>
                     </section>
+                    {ticket.issueType === "Task L1" ? (
+                        ""
+                    ) : (
+                        <div className="grid gap-4">
+                            <section className="flex justify-between gap-4">
+                                <div>
+                                    <h3 className="mb-2 text-sm font-bold uppercase tracking-wide text-gray-400">
+                                        Definition of Done (DOD)
+                                    </h3>
+                                    <p className="whitespace-pre-wrap wrap-break-word text-lg leading-7">
+                                        {ticket.dod}
+                                    </p>
+                                </div>
 
-                    <section className="flex justify-between gap-4">
-                        <div>
-                            <h3 className="mb-2 text-sm font-bold uppercase tracking-wide text-gray-400">
-                                Definition of Done (DOD)
-                            </h3>
-                            <p className="whitespace-pre-wrap wrap-break-word text-lg leading-7">
-                                {ticket.dod}
-                            </p>
+                                <div>
+                                    <h3 className="mb-2 text-sm font-bold uppercase tracking-wide text-gray-400">
+                                        Definition of Ready (DOR)
+                                    </h3>
+                                    <p className="whitespace-pre-wrap wrap-break-word text-lg leading-7">
+                                        {ticket.dor}
+                                    </p>
+                                </div>
+                            </section>
+
+                            <section>
+                                <h3 className="mb-2 text-sm font-bold uppercase tracking-wide text-gray-400">
+                                    Acceptance Criteria
+                                </h3>
+
+                                <p className="whitespace-pre-wrap wrap-break-word text-lg leading-7">
+                                    {ticket.acceptanceCriteria}
+                                </p>
+                            </section>
                         </div>
-
-                        <div>
-                            <h3 className="mb-2 text-sm font-bold uppercase tracking-wide text-gray-400">
-                                Definition of Ready (DOR)
-                            </h3>
-                            <p className="whitespace-pre-wrap wrap-break-word text-lg leading-7">
-                                {ticket.dor}
-                            </p>
-                        </div>
-                    </section>
-
-                    <section>
-                        <h3 className="mb-2 text-sm font-bold uppercase tracking-wide text-gray-400">
-                            Acceptance Criteria
-                        </h3>
-
-                        <p className="whitespace-pre-wrap wrap-break-word text-lg leading-7">
-                            {ticket.acceptanceCriteria}
-                        </p>
-                    </section>
-
+                    )}
                     <section className="grid gap-5 sm:grid-cols-2">
                         <div>
                             <h3 className="mb-2 text-sm font-bold uppercase tracking-wide text-gray-400">
