@@ -82,7 +82,7 @@ const Card = ({ jira }) => {
                 <footer className="mt-2 flex shrink-0 flex-col gap-2">
                     <div className="flex min-w-0 items-center justify-between gap-3 px-2">
                         <p className="truncate font-bold text-sky-400">
-                            {jira.asigneeName}
+                            {jira.asignee}
                         </p>
 
                         <span

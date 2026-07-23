@@ -1,160 +1,151 @@
 [
-  {
-    id: "PROJ-101",
-    title: "Implementar inicio de sesión con SSO",
-    description:
-      "Integrar el flujo de autenticación corporativa mediante Single Sign-On.",
-    asignee: "Ana Martínez",
-    status: "In Progress",
+    {
+        "id": "PROJ-101",
+        "title": "Implementar inicio de sesión con SSO",
+        "description": "Integrar el flujo de autenticación corporativa mediante Single Sign-On.",
+        "asignee": "Ana Martínez",
+        "status": "In Progress",
 
-    issueType: "Story",
-    issueTypeIcon: "https://example.com/icons/story.svg",
+        "issueType": "Story",
+        "issueTypeIcon": "https://cdn-icons-png.flaticon.com/512/906/906334.png",
 
-    labels: ["authentication", "frontend"],
-    teamBacklog: "Digital Banking",
+        "labels": ["authentication", "frontend"],
+        "teamBacklog": "Digital Banking",
 
-    dod: "Development completed, tests approved and documentation updated",
-    dor: "Requirements defined and dependencies identified",
-    acceptanceCriteria:
-      "El usuario puede iniciar sesión utilizando sus credenciales corporativas.",
+        "dod": "Development completed, tests approved and documentation updated",
+        "dor": "Requirements defined and dependencies identified",
+        "acceptanceCriteria": "El usuario puede iniciar sesión utilizando sus credenciales corporativas.",
 
-    piEstimate: 8,
-    sprintEstimate: 5,
+        "piEstimate": 8,
+        "sprintEstimate": 5,
 
-    epicName: "Modernización de autenticación",
-    epicKey: "EPIC-20",
+        "epicName": "Modernización de autenticación",
+        "epicKey": "EPIC-20",
 
-    bbvaComponent: "Access Management",
-    backlog: "Security Backlog",
+        "bbvaComponent": "Access Management",
+        "backlog": "Security Backlog",
 
-    dueDate: "2026-08-15",
-    workspace: "Digital Channels"
-  },
+        "dueDate": "2026-08-15",
+        "workspace": "Digital Channels"
+    },
 
-  {
-    id: "PROJ-102",
-    title: "Corregir error al cargar movimientos",
-    description:
-      "La aplicación muestra un error cuando la cuenta tiene más de 500 movimientos.",
-    asignee: "Carlos Rodríguez",
-    status: "To Do",
+    {
+        "id": "PROJ-102",
+        "title": "Corregir error al cargar movimientos",
+        "description": "La aplicación muestra un error cuando la cuenta tiene más de 500 movimientos.",
+        "asignee": "Carlos Rodríguez",
+        "status": "To Do",
 
-    issueType: "Bug",
-    issueTypeIcon: "https://example.com/icons/bug.svg",
+        "issueType": "Bug",
+        "issueTypeIcon": "https://cdn-icons-png.flaticon.com/512/906/906334.png",
 
-    labels: ["bug", "transactions"],
-    teamBacklog: "Accounts",
+        "labels": ["bug", "transactions"],
+        "teamBacklog": "Accounts",
 
-    dod: "Error corregido y pruebas de regresión ejecutadas",
-    dor: "Pasos para reproducir documentados",
-    acceptanceCriteria:
-      "La pantalla debe cargar correctamente cuentas con más de 500 movimientos.",
+        "dod": "Error corregido y pruebas de regresión ejecutadas",
+        "dor": "Pasos para reproducir documentados",
+        "acceptanceCriteria": "La pantalla debe cargar correctamente cuentas con más de 500 movimientos.",
 
-    piEstimate: 3,
-    sprintEstimate: 2,
+        "piEstimate": 3,
+        "sprintEstimate": 2,
 
-    epicName: "Mejoras en consulta de movimientos",
-    epicKey: "EPIC-21",
+        "epicName": "Mejoras en consulta de movimientos",
+        "epicKey": "EPIC-21",
 
-    bbvaComponent: "Transactions",
-    backlog: "Accounts Backlog",
+        "bbvaComponent": "Transactions",
+        "backlog": "Accounts Backlog",
 
-    dueDate: "2026-07-30",
-    workspace: "Core Banking"
-  },
+        "dueDate": "2026-07-30",
+        "workspace": "Core Banking"
+    },
 
-  {
-    id: "PROJ-103",
-    title: "Diseñar nueva pantalla de transferencias",
-    description:
-      "Crear el diseño responsive para el nuevo flujo de transferencias nacionales.",
-    asignee: "Laura Gómez",
-    status: "In Review",
+    {
+        "id": "PROJ-103",
+        "title": "Diseñar nueva pantalla de transferencias",
+        "description": "Crear el diseño responsive para el nuevo flujo de transferencias nacionales.",
+        "asignee": "Laura Gómez",
+        "status": "In Review",
 
-    issueType: "Task",
-    issueTypeIcon: "https://example.com/icons/task.svg",
+        "issueType": "Task",
+        "issueTypeIcon": "https://cdn-icons-png.flaticon.com/512/906/906334.png",
 
-    labels: ["ux", "transfers", "responsive"],
-    teamBacklog: "Payments",
+        "labels": ["ux", "transfers", "responsive"],
+        "teamBacklog": "Payments",
 
-    dod: "Diseño aprobado por UX y Product Owner",
-    dor: "Flujo funcional validado y requerimientos disponibles",
-    acceptanceCriteria:
-      "El diseño debe contemplar versiones desktop, tablet y móvil.",
+        "dod": "Diseño aprobado por UX y Product Owner",
+        "dor": "Flujo funcional validado y requerimientos disponibles",
+        "acceptanceCriteria": "El diseño debe contemplar versiones desktop, tablet y móvil.",
 
-    piEstimate: 5,
-    sprintEstimate: 3,
+        "piEstimate": 5,
+        "sprintEstimate": 3,
 
-    epicName: "Nuevo flujo de transferencias",
-    epicKey: "EPIC-22",
+        "epicName": "Nuevo flujo de transferencias",
+        "epicKey": "EPIC-22",
 
-    bbvaComponent: "Payments UI",
-    backlog: "Payments Backlog",
+        "bbvaComponent": "Payments UI",
+        "backlog": "Payments Backlog",
 
-    dueDate: "2026-08-05",
-    workspace: "Payments"
-  },
+        "dueDate": "2026-08-05",
+        "workspace": "Payments"
+    },
 
-  {
-    id: "PROJ-104",
-    title: "Actualizar documentación de la API",
-    description: "",
-    asignee: "",
-    status: "Backlog",
+    {
+        "id": "PROJ-104",
+        "title": "Actualizar documentación de la API",
+        "description": "",
+        "asignee": "",
+        "status": "Backlog",
 
-    issueType: "Task",
-    issueTypeIcon: "https://example.com/icons/task.svg",
+        "issueType": "Task",
+        "issueTypeIcon": "https://cdn-icons-png.flaticon.com/512/906/906334.png",
 
-    labels: [],
-    teamBacklog: "API Platform",
+        "labels": [],
+        "teamBacklog": "API Platform",
 
-    dod: "",
-    dor: "",
-    acceptanceCriteria: "",
+        "dod": "",
+        "dor": "",
+        "acceptanceCriteria": "",
 
-    piEstimate: "",
-    sprintEstimate: "",
+        "piEstimate": "",
+        "sprintEstimate": "",
 
-    epicName: "",
-    epicKey: "",
+        "epicName": "",
+        "epicKey": "",
 
-    bbvaComponent: "API Documentation",
-    backlog: "Platform Backlog",
+        "bbvaComponent": "API Documentation",
+        "backlog": "Platform Backlog",
 
-    dueDate: "",
-    workspace: "Open Platform"
-  },
+        "dueDate": "",
+        "workspace": "Open Platform"
+    },
 
-  {
-    id: "PROJ-105",
-    title:
-      "Optimizar el tiempo de respuesta del dashboard de analítica empresarial",
-    description:
-      "Analizar las consultas actuales, aplicar paginación y mejorar el almacenamiento en caché para reducir el tiempo promedio de carga.",
-    asignee: "Miguel Hernández",
-    status: "Done",
+    {
+        "id": "PROJ-105",
+        "title": "Optimizar el tiempo de respuesta del dashboard de analítica empresarial",
+        "description": "Analizar las consultas actuales, aplicar paginación y mejorar el almacenamiento en caché para reducir el tiempo promedio de carga.",
+        "asignee": "Miguel Hernández",
+        "status": "Done",
 
-    issueType: "Story",
-    issueTypeIcon: "https://example.com/icons/story.svg",
+        "issueType": "Story",
+        "issueTypeIcon": "https://cdn-icons-png.flaticon.com/512/906/906334.png",
 
-    labels: ["performance", "analytics", "backend", "priority-high"],
-    teamBacklog: "Data Analytics",
+        "labels": ["performance", "analytics", "backend", "priority-high"],
+        "teamBacklog": "Data Analytics",
 
-    dod: "Código desplegado, métricas validadas y pruebas de carga aprobadas",
-    dor: "Objetivo de rendimiento definido y datos de prueba preparados",
-    acceptanceCriteria:
-      "El dashboard debe cargar en menos de dos segundos para consultas de hasta 100,000 registros.",
+        "dod": "Código desplegado, métricas validadas y pruebas de carga aprobadas",
+        "dor": "Objetivo de rendimiento definido y datos de prueba preparados",
+        "acceptanceCriteria": "El dashboard debe cargar en menos de dos segundos para consultas de hasta 100,000 registros.",
 
-    piEstimate: 13,
-    sprintEstimate: 8,
+        "piEstimate": 13,
+        "sprintEstimate": 8,
 
-    epicName: "Optimización de plataformas analíticas",
-    epicKey: "EPIC-23",
+        "epicName": "Optimización de plataformas analíticas",
+        "epicKey": "EPIC-23",
 
-    bbvaComponent: "Analytics Dashboard",
-    backlog: "Data Backlog",
+        "bbvaComponent": "Analytics Dashboard",
+        "backlog": "Data Backlog",
 
-    dueDate: "2026-07-20",
-    workspace: "Enterprise Data"
-  }
+        "dueDate": "2026-07-20",
+        "workspace": "Enterprise Data"
+    }
 ]

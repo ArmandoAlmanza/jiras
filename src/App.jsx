@@ -6,129 +6,164 @@ import { useState } from "react";
 const App = () => {
     const jiraTickets = [
         {
-            title: "Implementar autenticación con OAuth2",
+            id: "PROJ-101",
+            title: "Implementar inicio de sesión con SSO",
             description:
-                "Agregar inicio de sesión mediante Google y Microsoft utilizando OAuth2 y JWT.",
-            assignee: {
-                name: "Ana Martínez",
-                photo: "https://i.pravatar.cc/150?img=5",
-            },
-            dueDate: "2026-07-08",
-            status: "New",
-        },
-        {
-            title: "Corregir error en cálculo de impuestos",
-            description:
-                "El total del IVA se calcula incorrectamente cuando existen descuentos acumulados.",
-            assignee: {
-                name: "Carlos Ramírez",
-                photo: "https://i.pravatar.cc/150?img=12",
-            },
-            dueDate: "2026-07-02",
-            status: "Analysing",
-        },
-        {
-            title: "Optimizar consultas a MongoDB",
-            description:
-                "Reducir el tiempo de respuesta de las consultas principales agregando índices.",
-            assignee: {
-                name: "Fernanda López",
-                photo: "https://i.pravatar.cc/150?img=32",
-            },
-            dueDate: "2026-07-15",
-            status: "Ready",
-        },
-        {
-            title: "Diseñar pantalla de gestión de usuarios",
-            description:
-                "Crear el diseño responsive para la administración de usuarios y roles.",
-            assignee: {
-                name: "Miguel Hernández",
-                photo: "https://i.pravatar.cc/150?img=18",
-            },
-            dueDate: "2026-07-05",
+                "Integrar el flujo de autenticación corporativa mediante Single Sign-On.",
+            asignee: "Ana Martínez",
             status: "In Progress",
+
+            issueType: "Story",
+            issueTypeIcon: "https://example.com/icons/story.svg",
+
+            labels: ["authentication", "frontend"],
+            teamBacklog: "Digital Banking",
+
+            dod: "Development completed, tests approved and documentation updated",
+            dor: "Requirements defined and dependencies identified",
+            acceptanceCriteria:
+                "El usuario puede iniciar sesión utilizando sus credenciales corporativas.",
+
+            piEstimate: 8,
+            sprintEstimate: 5,
+
+            epicName: "Modernización de autenticación",
+            epicKey: "EPIC-20",
+
+            bbvaComponent: "Access Management",
+            backlog: "Security Backlog",
+
+            dueDate: "2026-08-15",
+            workspace: "Digital Channels",
         },
+
         {
-            title: "Actualizar documentación de la API",
+            id: "PROJ-102",
+            title: "Corregir error al cargar movimientos",
             description:
-                "Agregar ejemplos de consumo para los nuevos endpoints de inventario.",
-            assignee: {
-                name: "Sofía Torres",
-                photo: "https://i.pravatar.cc/150?img=47",
-            },
-            dueDate: "2026-07-10",
-            status: "Test",
-        },
-        {
-            title: "Agregar pruebas unitarias al módulo de ventas",
-            description:
-                "Incrementar la cobertura de pruebas al 85% para el microservicio de ventas.",
-            assignee: {
-                name: "Diego Pérez",
-                photo: "https://i.pravatar.cc/150?img=41",
-            },
-            dueDate: "2026-07-18",
-            status: "Ready To Verify",
-        },
-        {
-            title: "Implementar notificaciones por correo",
-            description:
-                "Enviar correos automáticos al crear y cerrar incidencias.",
-            assignee: {
-                name: "Laura Sánchez",
-                photo: "https://i.pravatar.cc/150?img=24",
-            },
-            dueDate: "2026-07-12",
-            status: "Accepted",
-        },
-        {
-            title: "Refactorizar servicio de inventario",
-            description:
-                "Separar la lógica de negocio en servicios más pequeños siguiendo arquitectura limpia.",
-            assignee: {
-                name: "Javier Gómez",
-                photo: "https://i.pravatar.cc/150?img=68",
-            },
-            dueDate: "2026-07-20",
-            status: "Ready to Deploy",
-        },
-        {
-            title: "Corregir fuga de memoria en el Gateway",
-            description:
-                "Identificar y solucionar el consumo excesivo de memoria bajo alta carga.",
-            assignee: {
-                name: "Valeria Cruz",
-                photo: "https://i.pravatar.cc/150?img=49",
-            },
-            dueDate: "2026-07-22",
-            status: "To Rework",
-        },
-        {
-            title: "Eliminar código legado del módulo financiero",
-            description:
-                "Retirar clases obsoletas y actualizar dependencias relacionadas.",
-            assignee: {
-                name: "Roberto Castillo",
-                photo: "https://i.pravatar.cc/150?img=60",
-            },
-            dueDate: "2026-07-28",
-            status: "Discarded",
-        },
-        {
-            title: "Desplegar versión 2.4.0 a producción",
-            description:
-                "Realizar el despliegue de la nueva versión durante la ventana de mantenimiento.",
-            assignee: {
-                name: "Paola Ríos",
-                photo: "https://i.pravatar.cc/150?img=23",
-            },
+                "La aplicación muestra un error cuando la cuenta tiene más de 500 movimientos.",
+            asignee: "Carlos Rodríguez",
+            status: "To Do",
+
+            issueType: "Bug",
+            issueTypeIcon: "https://example.com/icons/bug.svg",
+
+            labels: ["bug", "transactions"],
+            teamBacklog: "Accounts",
+
+            dod: "Error corregido y pruebas de regresión ejecutadas",
+            dor: "Pasos para reproducir documentados",
+            acceptanceCriteria:
+                "La pantalla debe cargar correctamente cuentas con más de 500 movimientos.",
+
+            piEstimate: 3,
+            sprintEstimate: 2,
+
+            epicName: "Mejoras en consulta de movimientos",
+            epicKey: "EPIC-21",
+
+            bbvaComponent: "Transactions",
+            backlog: "Accounts Backlog",
+
             dueDate: "2026-07-30",
-            status: "Deployed",
+            workspace: "Core Banking",
+        },
+
+        {
+            id: "PROJ-103",
+            title: "Diseñar nueva pantalla de transferencias",
+            description:
+                "Crear el diseño responsive para el nuevo flujo de transferencias nacionales.",
+            asignee: "Laura Gómez",
+            status: "In Review",
+
+            issueType: "Task",
+            issueTypeIcon: "https://example.com/icons/task.svg",
+
+            labels: ["ux", "transfers", "responsive"],
+            teamBacklog: "Payments",
+
+            dod: "Diseño aprobado por UX y Product Owner",
+            dor: "Flujo funcional validado y requerimientos disponibles",
+            acceptanceCriteria:
+                "El diseño debe contemplar versiones desktop, tablet y móvil.",
+
+            piEstimate: 5,
+            sprintEstimate: 3,
+
+            epicName: "Nuevo flujo de transferencias",
+            epicKey: "EPIC-22",
+
+            bbvaComponent: "Payments UI",
+            backlog: "Payments Backlog",
+
+            dueDate: "2026-08-05",
+            workspace: "Payments",
+        },
+
+        {
+            id: "PROJ-104",
+            title: "Actualizar documentación de la API",
+            description: "",
+            asignee: "",
+            status: "Backlog",
+
+            issueType: "Task",
+            issueTypeIcon: "https://example.com/icons/task.svg",
+
+            labels: [],
+            teamBacklog: "API Platform",
+
+            dod: "",
+            dor: "",
+            acceptanceCriteria: "",
+
+            piEstimate: "",
+            sprintEstimate: "",
+
+            epicName: "",
+            epicKey: "",
+
+            bbvaComponent: "API Documentation",
+            backlog: "Platform Backlog",
+
+            dueDate: "",
+            workspace: "Open Platform",
+        },
+
+        {
+            id: "PROJ-105",
+            title: "Optimizar el tiempo de respuesta del dashboard de analítica empresarial",
+            description:
+                "Analizar las consultas actuales, aplicar paginación y mejorar el almacenamiento en caché para reducir el tiempo promedio de carga.",
+            asignee: "Miguel Hernández",
+            status: "Done",
+
+            issueType: "Story",
+            issueTypeIcon: "https://example.com/icons/story.svg",
+
+            labels: ["performance", "analytics", "backend", "priority-high"],
+            teamBacklog: "Data Analytics",
+
+            dod: "Código desplegado, métricas validadas y pruebas de carga aprobadas",
+            dor: "Objetivo de rendimiento definido y datos de prueba preparados",
+            acceptanceCriteria:
+                "El dashboard debe cargar en menos de dos segundos para consultas de hasta 100,000 registros.",
+
+            piEstimate: 13,
+            sprintEstimate: 8,
+
+            epicName: "Optimización de plataformas analíticas",
+            epicKey: "EPIC-23",
+
+            bbvaComponent: "Analytics Dashboard",
+            backlog: "Data Backlog",
+
+            dueDate: "2026-07-20",
+            workspace: "Enterprise Data",
         },
     ];
     const [activeView, setActiveView] = useState("dashboard");
-
 
     const renderContent = () => {
         switch (activeView) {
@@ -154,10 +189,7 @@ const App = () => {
 
     return (
         <div className="flex">
-            <Menu
-                activeView={activeView}
-                setActiveView={setActiveView}
-            />
+            <Menu activeView={activeView} setActiveView={setActiveView} />
 
             <main className="flex-1 max-h-screen overflow-y-scroll">
                 {renderContent()}
@@ -165,6 +197,5 @@ const App = () => {
         </div>
     );
 };
-
 
 export default App;
